@@ -5,10 +5,10 @@
 </header>
 </div>
 <h1>you have {{ taskStore.totalTask}} Task </h1>
-<h1>{{taskStore.taskValue}}</h1>
+<h1>{{taskStore.taskValue}},{{ taskStore.allTask}},{{ taskStore.editField  }},{{ taskStore.updatedTask  }}</h1>
 <form @submit.prevent="inputHandler"><TaskForm v-model="taskStore.taskValue"/></form>
-
-<Display />
+<form v-show="taskStore.editField" @submit.prevent="updateHandler"><TaskForm v-model="taskStore.updatedTask"/></form>
+<Display @edit="editHandler(task)"/>
 
 <div>
     <footer>
@@ -20,15 +20,24 @@
 
 <script setup>
 import {useTaskStore }from './stores/TaskStore'
-// import {ref} from 'vue'
 import TaskForm from './components/TaskForm.vue'
 import Display from './components/TaskDisplay.vue'
 const taskStore = useTaskStore();
-// let input=ref('')
 let inputHandler = ()=>{
     taskStore.addTask(taskStore.taskValue)
     taskStore.taskValue=''
     }
+let editHandler = ()=>{
+ 
+  taskStore.updatedTask = taskStore.allTask[taskStore.updatedTaskIndex].task
+  taskStore.editField =! taskStore.editField
+  console.log(taskStore.updatedTaskIndex ,'from app')
+}
+let updateHandler = ()=>{
+  taskStore.allTask[taskStore.updatedTaskIndex].task = taskStore.updatedTask 
+  taskStore.editField =! taskStore.editField
+  taskStore.updatedTask = ''
+}
 
 </script>
 

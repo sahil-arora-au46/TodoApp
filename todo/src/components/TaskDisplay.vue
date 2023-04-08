@@ -4,19 +4,28 @@
        <div>
         <button @click.once="task.isCompleted=!task.isCompleted"  class="icon-wrapper" v-show="!task.isCompleted"> <i class="fa-solid fa-check"></i></button>
         
-       <button class="icon-wrapper" v-show="!task.isCompleted"><i class="fa-solid fa-pen-to-square"></i></button>
+       <button  @click="editHandler(task)" class="icon-wrapper" v-show="!task.isCompleted"><i class="fa-solid fa-pen-to-square"></i></button>
         <button @click="deleteHandler(task)" class="icon-wrapper"><i class="fa-solid fa-trash"></i></button>
        </div>
     </div>
 </template>
 
 <script setup>
+
+
+
 import {useTaskStore} from '../stores/TaskStore';
+import {defineEmits} from 'vue'
+let emit =defineEmits(['edit'])
 const taskStore = useTaskStore();
 let taskContainer = 'task-container';
 let deleteHandler=(task)=>{
 let taskIndex = taskStore.allTask.indexOf(task)
 taskStore.allTask.splice(taskIndex,1)
+}
+let editHandler = (task)=>{
+     taskStore.updatedTaskIndex = taskStore.allTask.indexOf(task)
+    emit('edit')
 }
 </script>
 
