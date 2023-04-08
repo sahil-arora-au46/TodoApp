@@ -11,7 +11,7 @@
 <script setup>
 
 import { defineProps,defineEmits} from 'vue';
-defineProps(['modelValue','class','button']);
+defineProps(['modelValue']);
 defineEmits(['uptade:modelValue'])
 
 </script>
