@@ -1,25 +1,23 @@
 <template>
-    <form @submit.prevent="inputHandler">
-        <input type="text" placeholder="write what needs to be finished " v-model="taskStore.taskValue">
+    
+        <input type="text" placeholder="write what needs to be finished " :value="modelValue" @input="$emit('update:modelValue',$event.target.value)">
         <button>add</button>
        
-    </form>
+    
 
     
 </template>
 
 <script setup>
-import {useTaskStore }from '../stores/TaskStore'
-// import { defineProps } from 'vue';
-// defineProps[{handler:{
-// type :String,
-// required :true,
-// }}]
-const taskStore = useTaskStore();
-let inputHandler = ()=>{
-taskStore.addTask(taskStore.taskValue)
-taskStore.taskValue= ''
-}
+// import {useTaskStore }from '../stores/TaskStore'
+import { defineProps,defineEmits} from 'vue';
+defineProps(['modelValue']);
+defineEmits(['uptade:modelValue'])
+// const taskStore = useTaskStore();
+// const emitHandler = (event)=>{
+    
+// }
+
 // function editHandler(taskObj){
 // taskStore.editTask(taskObj)
 // }

@@ -7,7 +7,7 @@ const allTask = ref([{
     isCompleted:false
 }])   
 
-const taskValue = ref('')
+const taskValue = ref('hi')
 const editField = ref(false)
 const totalTask = computed(()=>allTask.value.length)  //getter
 const addTask = (task)=>{
@@ -17,6 +17,8 @@ const addTask = (task)=>{
     }
    allTask.value.push(taskObj)
 };
+
+
 
 // const editTask = (odlvalue,newvalue)=> {
 //    for(let i=0;i<allTask.value.length;i++){
