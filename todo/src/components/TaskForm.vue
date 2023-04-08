@@ -1,6 +1,6 @@
 <template>
     
-        <input type="text" placeholder="write what needs to be finished " :value="modelValue" @input="$emit('update:modelValue',$event.target.value)">
+        <input v-bind="$attrs" type="text" placeholder="write what needs to be finished " :value="modelValue" @input="$emit('update:modelValue',$event.target.value)">
         <button>add</button>
        
     
@@ -9,20 +9,17 @@
 </template>
 
 <script setup>
-// import {useTaskStore }from '../stores/TaskStore'
+
 import { defineProps,defineEmits} from 'vue';
-defineProps(['modelValue']);
+defineProps(['modelValue','class','button']);
 defineEmits(['uptade:modelValue'])
-// const taskStore = useTaskStore();
-// const emitHandler = (event)=>{
-    
-// }
 
-// function editHandler(taskObj){
-// taskStore.editTask(taskObj)
-// }
 </script>
-
+<script>
+export default {
+  inheritAttrs: false
+}
+</script>
 <style  scoped>
 
 </style>

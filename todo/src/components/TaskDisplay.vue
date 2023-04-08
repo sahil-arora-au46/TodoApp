@@ -28,7 +28,11 @@ let editHandler = (task)=>{
     emit('edit')
 }
 </script>
-
+<script>
+export default {
+  inheritAttrs: false
+}
+</script>
 
 <style  scoped>
 .task-container{

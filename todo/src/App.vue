@@ -1,13 +1,14 @@
 <template>
   <div>
 <header>
+  <PlusIcon/>
   <b>Small Steps Make Big Change</b>
 </header>
 </div>
 <h1>you have {{ taskStore.totalTask}} Task </h1>
-<h1>{{taskStore.taskValue}},{{ taskStore.allTask}},{{ taskStore.editField  }},{{ taskStore.updatedTask  }}</h1>
+
 <form @submit.prevent="inputHandler"><TaskForm v-model="taskStore.taskValue"/></form>
-<form v-show="taskStore.editField" @submit.prevent="updateHandler"><TaskForm v-model="taskStore.updatedTask"/></form>
+<div class="editBox" v-show="taskStore.editField" ><form @submit.prevent="updateHandler"><TaskForm class="edit-box-input" v-model="taskStore.updatedTask"/></form></div>
 <Display @edit="editHandler(task)"/>
 
 <div>
@@ -42,5 +43,23 @@ let updateHandler = ()=>{
 </script>
 
 <style scoped>
+.editBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+position: absolute;
+top: 0;
+background-color: #8f2c2c;
+width: 100vw;
+height: 100vh;
+opacity: .4;
 
+}
+
+.edit-box-input{
+width: 30vw;
+}
+body{
+  position: relative;
+}
 </style>
