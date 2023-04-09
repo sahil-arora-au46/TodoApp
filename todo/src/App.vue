@@ -15,8 +15,8 @@
     <form @submit.prevent="updateHandler">
       <TaskForm inputStyle="updateInput" buttonStyle="updatebutton"  button="Update" v-model="taskStore.updatedTask" />
     </form>
-    <button class="icon-wrapper" @click="taskStore.editField=!taskStore.editField" >
-      <i class="fa-solid fa-square-xmark"></i>
+    <button class="icon-wrapper btnico" @click="taskStore.editField=!taskStore.editField" >
+      <i class="fa-solid fa-square-xmark xIcon"></i>
     </button>
     
   </div>
@@ -91,6 +91,13 @@ let updateHandler = () => {
     position: absolute;
     top: 3px;
     right: 10px;
+    
+   
+}
+.xIcon{
+  width: 25px;
+  height: 25px;
+ 
 }
 
 /* .edit-box-input {
