@@ -1,7 +1,7 @@
 <template>
     
-        <input v-bind="$attrs" type="text" placeholder="write what needs to be finished " :value="modelValue" @input="$emit('update:modelValue',$event.target.value)">
-        <button>add</button>
+        <input :class= "inputStyle"  type="text" placeholder="write what needs to be finished " :value="modelValue" @input="$emit('update:modelValue',$event.target.value)">
+        <button :class="buttonStyle">{{ button}}</button>
        
     
 
@@ -11,8 +11,9 @@
 <script setup>
 
 import { defineProps,defineEmits} from 'vue';
-defineProps(['modelValue']);
+defineProps(['modelValue','button','inputStyle','buttonStyle']);
 defineEmits(['uptade:modelValue'])
+// let props = defineProps(['a','b'])
 
 </script>
 <script>
@@ -21,5 +22,30 @@ export default {
 }
 </script>
 <style  scoped>
-
+.taskInput{
+  width: 86%;
+  height: 20%;
+  /* background-color: #7a2f2f; */
+  padding: 5px;
+  border-top-left-radius: 5PX;
+  border-bottom-left-radius: 5PX;
+}
+.taskbutton{
+  padding: 5px;
+  border-top-RIGHT-radius: 5PX;
+  border-bottom-right-radius: 5PX;
+  background-color: #0c6ad6;
+  color: white;
+}
+.updateInput{
+  width: 70%;
+  height: 40px;
+  border-top-left-radius: 10PX;
+  border-bottom-left-radius: 10PX;
+}
+.updatebutton{
+  height: 44px;
+  border-top-RIGHT-radius: 10PX;
+  border-bottom-right-radius: 10PX;
+}
 </style>

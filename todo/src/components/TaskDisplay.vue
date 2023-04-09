@@ -32,10 +32,16 @@ let editHandler = (task)=>{
 
 <style  scoped>
 .task-container{
-    background-color: #a7a3a3;
+    background-color: #c7b3b3;
     display:flex;
     justify-content: space-between;
-    margin-top: 2px;
+    margin-top: 6px;
+    padding-left: 12px;
+    border-bottom-left-radius: 25px;
+    color:black;
+    font-size: 22px;
+    
+
     
 }
 .completed{
