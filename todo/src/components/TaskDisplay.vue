@@ -32,13 +32,13 @@ let editHandler = (task)=>{
 
 <style  scoped>
 .task-container{
-    background-color: #c7b3b3;
+    background-color: #fcf5f5;
     display:flex;
     justify-content: space-between;
     margin-top: 6px;
     padding-left: 12px;
     border-bottom-left-radius: 25px;
-    color:black;
+    color:teal;
     font-size: 22px;
     
 
@@ -47,9 +47,13 @@ let editHandler = (task)=>{
 .completed{
     text-decoration:line-through;
     text-decoration-thickness: 4px;
+    text-decoration-color: black;
 }
 .icon-wrapper{
     background-color:transparent ;
     border: none;
+    font-size: large;
+    margin-top: 8px;
+    margin-right: 5px;
 }
 </style>

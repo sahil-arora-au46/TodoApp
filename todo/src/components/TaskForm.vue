@@ -25,10 +25,11 @@ export default {
 .taskInput{
   width: 86%;
   height: 20%;
-  /* background-color: #7a2f2f; */
   padding: 5px;
   border-top-left-radius: 5PX;
   border-bottom-left-radius: 5PX;
+  /* background-color: #a81616; */
+  color: black !important; 
 }
 .taskbutton{
   padding: 5px;

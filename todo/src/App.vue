@@ -63,7 +63,7 @@ let updateHandler = () => {
   padding: 10px;
   border-radius: 10px;
   background-color: #e7e4e4;
-  opacity: .4;
+ 
 
 }
 .editBox {
@@ -72,14 +72,15 @@ let updateHandler = () => {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top:0px;
-  right:0px;
-  background-color: #141111;
-  width: 100%;
-  height: 100%;
+  top:-10px;
+  right:-10px;
+  background-color: #dfdada;
+  width: 110%;
+  height: 110%;
   border: 1px solid black;
   padding: 10px;
   border-radius: 10px;
+   /* opacity: .4; */
 
   
 
@@ -87,7 +88,6 @@ let updateHandler = () => {
 .icon-wrapper{
     background-color:transparent ;
     border: none;
-    color: white;
     position: absolute;
     top: 3px;
     right: 10px;

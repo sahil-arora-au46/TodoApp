@@ -7,7 +7,7 @@ const allTask = ref([{
     isCompleted:false
 }])   
 
-const taskValue = ref('hi');
+const taskValue = ref('');
 const editField = ref(false);
 const updatedTask = ref('');
 const updatedTaskIndex = ref(null)
