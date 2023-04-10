@@ -1,6 +1,6 @@
 <template>
     
-        <input :class= "inputStyle"  type="text" placeholder="write what needs to be finished " :value="modelValue" @input="$emit('update:modelValue',$event.target.value)">
+        <input :class= "inputStyle"  type="text" placeholder="write what needs to be finished... " :value="modelValue" @input="$emit('update:modelValue',$event.target.value)">
         <button :class="buttonStyle">{{ button}}</button>
        
     
