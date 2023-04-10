@@ -1,12 +1,14 @@
 <template v-if="taskStore.allTask.length>0">
-    <div v-for="task in taskStore.allTask" :key="task" :class="[taskContainer]">
-        <h3 :class="{completed:task.isCompleted}">{{ task.task}}</h3>
-       <div>
-        <button @click.once="task.isCompleted=!task.isCompleted"  class="icon-wrapper" v-show="!task.isCompleted"> <i class="fa-solid fa-check"></i></button>
-        
-       <button  @click="editHandler(task)" class="icon-wrapper" v-show="!task.isCompleted"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button @click="deleteHandler(task)" class="icon-wrapper"><i class="fa-solid fa-trash"></i></button>
-       </div>
+    <div v-for="task in taskStore.allTask" :key="task" :class="[taskContainer]" class="">
+        <h3 :class="{ completed: task.isCompleted }" class="text-Wrapper">{{ task.task }}</h3>
+        <div>
+            <button @click.once="task.isCompleted = !task.isCompleted" class="icon-wrapper" v-show="!task.isCompleted"> <i
+                    class="fa-solid fa-check"></i></button>
+
+            <button @click="editHandler(task)" class="icon-wrapper" v-show="!task.isCompleted"><i
+                    class="fa-solid fa-pen-to-square"></i></button>
+            <button @click="deleteHandler(task)" class="icon-wrapper"><i class="fa-solid fa-trash"></i></button>
+        </div>
     </div>
 </template>
 
@@ -14,46 +16,54 @@
 
 
 
-import {useTaskStore} from '../stores/TaskStore';
-import {defineEmits} from 'vue'
-let emit =defineEmits(['edit'])
+import { useTaskStore } from '../stores/TaskStore';
+import { defineEmits } from 'vue'
+let emit = defineEmits(['edit'])
 const taskStore = useTaskStore();
 let taskContainer = 'task-container';
-let deleteHandler=(task)=>{
-let taskIndex = taskStore.allTask.indexOf(task)
-taskStore.allTask.splice(taskIndex,1)
+let deleteHandler = (task) => {
+    let taskIndex = taskStore.allTask.indexOf(task)
+    taskStore.allTask.splice(taskIndex, 1)
 }
-let editHandler = (task)=>{
-     taskStore.updatedTaskIndex = taskStore.allTask.indexOf(task)
+let editHandler = (task) => {
+    taskStore.updatedTaskIndex = taskStore.allTask.indexOf(task)
     emit('edit')
 }
 </script>
 
 
 <style  scoped>
-.task-container{
+.task-container {
     background-color: #fcf5f5;
-    display:flex;
+    display: flex;
+    height: auto;
     justify-content: space-between;
     margin-top: 6px;
     padding-left: 12px;
     border-bottom-left-radius: 25px;
-    color:teal;
+    color: teal;
     font-size: 22px;
-    
+    max-width: 100%;
+   
 
-    
 }
-.completed{
-    text-decoration:line-through;
+
+.completed {
+    text-decoration: line-through;
     text-decoration-thickness: 4px;
     text-decoration-color: black;
 }
-.icon-wrapper{
-    background-color:transparent ;
+
+.icon-wrapper {
+    background-color: transparent;
     border: none;
     font-size: large;
     margin-top: 8px;
     margin-right: 5px;
 }
-</style>
+
+.text-Wrapper {
+    overflow: hidden;
+    flex-basis: 70%;
+    word-wrap: break-word;
+}</style>

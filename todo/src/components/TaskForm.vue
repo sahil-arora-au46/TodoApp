@@ -28,7 +28,6 @@ export default {
   padding: 5px;
   border-top-left-radius: 5PX;
   border-bottom-left-radius: 5PX;
-  /* background-color: #a81616; */
   color: black !important; 
 }
 .taskbutton{
@@ -45,8 +44,9 @@ export default {
   border-bottom-left-radius: 10PX;
 }
 .updatebutton{
-  height: 44px;
+  height: 42px;
   border-top-RIGHT-radius: 10PX;
   border-bottom-right-radius: 10PX;
+  background-color: teal;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
- <div class="todocontainer">
+ <div class="todocontainer relative w-[40vw] h-2/4">
    <!-- <div> -->
     <!-- <header>
       <PlusIcon />
@@ -56,15 +56,13 @@ let updateHandler = () => {
 
 <style scoped>
 .todocontainer{
-  position: relative;
-  width: 40vw;
-  height: 50%;
+  /* position: relative; */
+  /* width: 40vw; */
+  /* height: 50%; */
   border: 1px solid black;
   padding: 10px;
   border-radius: 10px;
   background-color: #e7e4e4;
- 
-
 }
 .editBox {
   position: relative;
