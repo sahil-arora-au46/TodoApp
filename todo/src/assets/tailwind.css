@@ -3,3 +3,56 @@
 @tailwind components;
 
 @tailwind utilities;
+
+
+@layer components {
+    .task-container {
+        background-color: #fcf5f5;
+        display: flex;
+        height: auto;
+        justify-content: space-between;
+        margin-top: 6px;
+        padding-left: 12px;
+        border-bottom-left-radius: 25px;
+        color: teal;
+        font-size: 22px;
+        max-width: 100%;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .taskInput{
+        width: 86%;
+        height: 20%;
+        padding: 5px;
+        border-top-left-radius: 5PX;
+        border-bottom-left-radius: 5PX;
+        color: black !important; 
+      }
+      .taskbutton{
+        padding: 5px;
+        border-top-RIGHT-radius: 5PX;
+        border-bottom-right-radius: 5PX;
+        background-color: #0c6ad6;
+        color: white;
+      }
+      .updateInput{
+        width: 70%;
+        height: 40px;
+        border-top-left-radius: 10PX;
+        border-bottom-left-radius: 10PX;
+        padding: 5px;
+      }
+      .updatebutton{
+        height: 42px;
+        border-top-RIGHT-radius: 10PX;
+        border-bottom-right-radius: 10PX;
+        background-color: teal;
+      }
+      .completed {
+        text-decoration: line-through;
+        text-decoration-thickness: 4px;
+        text-decoration-color: black;
+    }
+    
+}

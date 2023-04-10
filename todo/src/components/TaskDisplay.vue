@@ -1,13 +1,16 @@
 <template v-if="taskStore.allTask.length>0">
     <div v-for="task in taskStore.allTask" :key="task" :class="[taskContainer]" class="">
-        <h3 :class="{ completed: task.isCompleted }" class="text-Wrapper">{{ task.task }}</h3>
+        <h3 :class="{ completed: task.isCompleted }" class="text-Wrapper overflow-hidden basis-3/4 break-words">{{ task.task
+        }}</h3>
         <div>
-            <button @click.once="task.isCompleted = !task.isCompleted" class="icon-wrapper" v-show="!task.isCompleted"> <i
+            <button @click.once="task.isCompleted = !task.isCompleted"
+                class="icon-wrapper bg-transparent border-none text-lg mt-0.5 mr-1.5" v-show="!task.isCompleted"> <i
                     class="fa-solid fa-check"></i></button>
 
-            <button @click="editHandler(task)" class="icon-wrapper" v-show="!task.isCompleted"><i
-                    class="fa-solid fa-pen-to-square"></i></button>
-            <button @click="deleteHandler(task)" class="icon-wrapper"><i class="fa-solid fa-trash"></i></button>
+            <button @click="editHandler(task)" class="icon-wrapper bg-transparent border-none text-lg mt-0.5 mr-1.5"
+                v-show="!task.isCompleted"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button @click="deleteHandler(task)" class="icon-wrapper bg-transparent border-none text-lg mt-0.5 mr-1.5"><i
+                    class="fa-solid fa-trash"></i></button>
         </div>
     </div>
 </template>
@@ -33,7 +36,7 @@ let editHandler = (task) => {
 
 
 <style  scoped>
-.task-container {
+/* .task-container {
     background-color: #fcf5f5;
     display: flex;
     height: auto;
@@ -46,24 +49,25 @@ let editHandler = (task) => {
     max-width: 100%;
    
 
-}
+} */
 
-.completed {
+/* .completed {
     text-decoration: line-through;
     text-decoration-thickness: 4px;
     text-decoration-color: black;
-}
+} */
 
-.icon-wrapper {
-    background-color: transparent;
+/* .icon-wrapper {
+    background-color: transparent; 
     border: none;
     font-size: large;
     margin-top: 8px;
-    margin-right: 5px;
-}
+    margin-right: 6px;
+} */
 
-.text-Wrapper {
+/* .text-Wrapper {
     overflow: hidden;
     flex-basis: 70%;
     word-wrap: break-word;
-}</style>
+} */
+</style>

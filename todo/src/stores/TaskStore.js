@@ -5,11 +5,8 @@ export const useTaskStore = defineStore('taskStore',()=>
 const allTask = ref([{
     task: 'create todo app',
     isCompleted:false
-},
-{
-    task: 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
-    isCompleted:false
 }
+
 ])   
 
 const taskValue = ref('');

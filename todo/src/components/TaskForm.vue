@@ -22,7 +22,7 @@ export default {
 }
 </script>
 <style  scoped>
-.taskInput{
+/* .taskInput{
   width: 86%;
   height: 20%;
   padding: 5px;
@@ -48,5 +48,5 @@ export default {
   border-top-RIGHT-radius: 10PX;
   border-bottom-right-radius: 10PX;
   background-color: teal;
-}
+} */
 </style>
